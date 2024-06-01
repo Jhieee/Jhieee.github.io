@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GitHub io 시작하기 상세"
+title:  "GitHub io s"
 author: jhieee
 date:   2024-05-26 00:06:31
 tags: [githubio]
@@ -17,21 +17,19 @@ categories: [githubio]
 
 github io 를 사용하기 위해 아래 홈페이지에서 템플릿을 찾아야한다. 물론 한땀 한땀 나에게 맞게 개발할 수 있지만.. 굳이 그럴 필요가 있나 ?
 
-[http://jekyllthemes.org/](http://jekyllthemes.org/)
-
-해당 블로그에서 데모를 체험하고 신중하게 결정하자.
+[jekyllthemes](https://jekyllrb.com/docs/themes/) 에서 템플릿을 찾아보자,
 
 > Jekyll 는 설치형 블로그로 정적 사이트 생성기의 하나고 Ruby 언어를 기반으로 만들어짐 ([나무위키 참고](https://namu.wiki/w/jekyll))
 
 (chirpy)](https://chirpy.cotes.page/posts/getting-started/) 로 결정
 https://github.com/cotes2020/jekyll-theme-chirpy 에서 Source 를 땡겨오자.
 
-![alt text](/assets/img/image.png)
+![_blog reposition 생성_](/assets/img/github-io-start/init_1.png)
 _blog reposition 생성_
 
 Fork 후 Repository name 명을 {ID}.github.io 로 repository 를 생성한다.
 
-![alt text](/assets/img/image1.png)
+![branch 설정](/assets/img/github-io-start/init_2.png)
 _branch 설정_
 
 Setting -> Pages -> Branch 를 main 으로 지정 후 save 를 누르면 {id}.github.io 로 접속이 가능하다.
@@ -94,3 +92,43 @@ default 인 4000번 포트로 열려 127.0.0.1:4000 으로 접속
 ## 포스팅
 _posts 폴에더 YYYY-MM-DD-제목.md 로 생성하면 완료
 더 자세한건 깃헙을 참고하자.
+
+
+### 빌드 에러
+
+### 1. "URL" is not an HTTPS link
+
+![error_1 설정](/assets/img/github-io-start/error_1.png)
+
+> http://jekyllthemes.org/ is not an HTTPS link
+
+post 의 하이퍼링크에 url 이 http 가 있으면 빌드 시 실패 된다.
+
+### 2. 'a' tag is missing a reference
+
+![error_2 설정](/assets/img/github-io-start/error_2.png)
+
+> athors 설정
+
+athors 작성자 설정을 하지 않으면 빌드가 실패한다.
+
+_data/authors.yml 파일을 생성하여 authors 를 추가하고 posts 의 md 파일에 author 를 추가하자 
+
+```yaml
+## _data/authors.yml
+jhieee:
+  name: jinhyunglee
+```
+
+```md
+# md 파일
+---
+layout: post
+title:  "GitHub io 시작하기 상세"
+author: jhieee
+date:   2024-05-26 00:06:31
+tags: [githubio]
+description: ''
+categories: [githubio]
+---
+```
