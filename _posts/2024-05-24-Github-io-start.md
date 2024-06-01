@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GitHub io s"
+title:  "GitHub io 시작하기"
 author: jhieee
 date:   2024-05-26 00:06:31
 tags: [githubio]
